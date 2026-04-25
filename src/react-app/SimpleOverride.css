@@ -1,0 +1,247 @@
+/* src/react-app/SimpleOverride.css */
+
+/* === UTILS: Card & Containers === */
+.login-container,
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Card Universal */
+.form-panel, 
+.placeholder-page, 
+.content-page, 
+.dashboard-content .login-form {
+  background: var(--surface-0);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--surface-200);
+  padding: 2rem;
+  width: 100%;
+  margin-bottom: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* === INPUTS & FORMS === */
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-600);
+  margin-bottom: 0.5rem;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+input[type="date"],
+input[type="file"],
+select,
+textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--surface-200);
+  border-radius: var(--radius-md);
+  background-color: var(--surface-0);
+  color: var(--text-900);
+  font-size: 0.95rem;
+  transition: all 0.2s;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--primary-500);
+  box-shadow: 0 0 0 3px var(--primary-100);
+}
+
+/* === BUTTONS === */
+.login-button, 
+button[type="submit"] {
+  background-color: var(--primary-600);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.login-button:hover:not(:disabled) {
+  background-color: var(--primary-700);
+}
+
+.login-button:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.login-button:disabled {
+  background-color: var(--text-400);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* === TABLES === */
+.search-results-container {
+  overflow-x: auto;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--surface-200);
+  box-shadow: var(--shadow-sm);
+}
+
+.results-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.results-table th {
+  background-color: var(--surface-50);
+  color: var(--text-600);
+  font-weight: 600;
+  text-align: left;
+  padding: 1rem;
+  border-bottom: 1px solid var(--surface-200);
+}
+
+.results-table td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--surface-200);
+  color: var(--text-900);
+}
+
+.results-table tbody tr:hover {
+  background-color: var(--primary-50);
+}
+
+.results-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* === BADGES (Status) === */
+.status-badge,
+.status-badge-small {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+.status-badge.santri, .status-badge-small.santri { background: var(--primary-100); color: var(--primary-700); }
+.status-badge.alumni, .status-badge-small.alumni { background: var(--surface-200); color: var(--text-600); }
+.status-badge.pengurus, .status-badge-small.pengurus { background: #dbeafe; color: #1e40af; }
+.status-badge.pengabdi, .status-badge-small.pengabdi { background: #ffedd5; color: #9a3412; }
+.status-badge.menunggu, .status-badge-small.menunggu { background: #ffedd5; color: #9a3412; }
+.status-badge.disetujui, .status-badge-small.disetujui { background: var(--primary-100); color: var(--primary-700); }
+.status-badge.ditolak, .status-badge-small.ditolak { background: #fee2e2; color: #991b1b; }
+
+/* === ACTION BUTTONS === */
+.action-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.detail-button, .approve-button, .reject-button, .print-button, .mark-returned-button {
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--radius-md);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.2s;
+}
+
+.detail-button { background: var(--surface-100); color: var(--text-600); border-color: var(--surface-200); }
+.detail-button:hover { background: var(--surface-200); color: var(--text-900); }
+.approve-button { background: var(--primary-100); color: var(--primary-700); }
+.approve-button:hover { background: var(--primary-500); color: white; }
+.reject-button { background: #fee2e2; color: #991b1b; }
+.reject-button:hover { background: #ef4444; color: white; }
+.print-button { background: var(--surface-0); border-color: var(--surface-200); color: var(--text-600); }
+.print-button:hover { border-color: var(--primary-500); color: var(--primary-600); }
+
+/* === GLOBAL DETAIL VIEW (PHOTO FIX) === */
+.detail-view-container {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+
+/* WADAH FOTO 3x4 FIKS */
+.detail-photo {
+  width: 150px; /* Lebar fiks */
+  flex-shrink: 0;
+}
+
+.detail-photo img, 
+.detail-photo .photo-placeholder {
+  width: 100%;
+  aspect-ratio: 3 / 4; /* Paksa rasio 3:4 */
+  object-fit: cover;   /* Crop foto agar pas */
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--surface-200);
+  background: var(--surface-50);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-400);
+  box-shadow: var(--shadow-sm);
+}
+
+.detail-info-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.detail-item {
+  border-bottom: 1px solid var(--surface-100);
+  padding-bottom: 0.5rem;
+}
+
+.detail-item label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-400);
+  margin-bottom: 0.25rem;
+}
+
+.detail-item p {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-900);
+  margin: 0;
+}
+
+/* Mobile Response Global */
+@media (max-width: 768px) {
+  .detail-view-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .detail-photo {
+    width: 140px;
+    margin-bottom: 1.5rem;
+  }
+
+  .detail-info-grid {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+}
